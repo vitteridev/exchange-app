@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conversor de divisas</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header class="header">Conversor de divisas online</header>
+    <main>
+      <form id="formulario" name="formulario">
+        <div class="importe__contenedor">
+          <div>
+            <label class="importe__label" for="importe">Importe</label>
+            <input
+              placeholder="1000"
+              class="importe__input"
+              type="number"
+              name="importe"
+              id="importe"
+            />
+          </div>
+
+          <div>
+            <label class="divisa-base__label" for="divisa-base">De:</label>
+            <select name="divisa-base" id="divisa-base">
+              <option value="0">seleccione divisa</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="divisa-a-convertir__label" for="divisa-a-convertir"
+              >a</label
+            >
+            <select name="divisa-a-convertir" id="divisa-a-convertir">
+              <option value="0">seleccione divisa</option>
+            </select>
+          </div>
+        </div>
+        <div class="resultados__contenedor">
+          <div>
+            <p class="cotizacion__importe">1 dolar estadounidense =</p>
+            <strong class="cotizacion"> 100 pesos argentinos </strong>
+            <p class="cotizacion__base">1 ars = 1 uds</p>
+          </div>
+          <button id="btn-cotizacion" type="submit">Ver cotización</button>
+        </div>
+      </form>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
