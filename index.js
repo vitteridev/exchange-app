@@ -59,6 +59,10 @@ function calcularDivisa(importe, divisaAConvertir) {
   return valorDivisa;
 }
 
+function mostrarResultado() {
+  document.querySelector(".oculto").classList.remove("oculto");
+}
+
 function validarFormulario(event) {
   const form = document.getElementById("formulario");
 
@@ -93,6 +97,7 @@ function validarFormulario(event) {
           $cotizacionParrafo.textContent = `${divisaConvertida} ${$divisaAConvertir}`;
           $divisaValorBaseParrafo.textContent = `1 ${$divisaBase} = ${divisas[$divisaAConvertir]} ${$divisaAConvertir}`;
         });
+      mostrarResultado();
     } catch (error) {
       console.log("algo salio mal", error);
     }

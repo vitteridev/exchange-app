@@ -13,11 +13,21 @@
   align-items: center;
   gap: 20px;
 }
+@media (max-width: 890px) {
+  #formulario {
+    margin-top: 5px;
+  }
+}
 
 .importe__contenedor {
   display: flex;
   justify-content: space-around;
   gap: 20px;
+}
+@media (max-width: 890px) {
+  .importe__contenedor {
+    flex-direction: column;
+  }
 }
 
 label {
@@ -43,14 +53,36 @@ select {
   flex-direction: row;
   justify-content: space-around;
 }
+@media (max-width: 890px) {
+  .resultados__contenedor {
+    text-align: center;
+    flex-direction: column;
+  }
+}
+
 p {
   font-size: 2rem;
+}
+@media (max-width: 890px) {
+  p {
+    font-size: 1.5rem;
+  }
 }
 .cotizacion {
   font-size: 3rem;
 }
+@media (max-width: 890px) {
+  .cotizacion {
+    font-size: 2.5rem;
+  }
+}
 .cotizacion__base {
   font-size: 1.5rem;
+}
+@media (max-width: 890px) {
+  .cotizacion__base {
+    font-size: 1.1rem;
+  }
 }
 
 button {
@@ -69,6 +101,15 @@ button {
 }
 button:hover {
   cursor: pointer;
+}
+@media (max-width: 890px) {
+  button {
+    align-self: center;
+  }
+}
+
+.oculto {
+  display: none;
 }
 
 .error {
