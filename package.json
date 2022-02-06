@@ -1,0 +1,25 @@
+{
+  "name": "exchangeapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "servidor": "http-server -c-1",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitteridev/exchange-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vitteridev/exchange-app/issues"
+  },
+  "homepage": "https://github.com/vitteridev/exchange-app#readme",
+  "devDependencies": {
+    "cypress": "^9.4.1"
+  }
+}
