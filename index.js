@@ -64,6 +64,7 @@ function mostrarResultado() {
 }
 
 function validarFormulario(event) {
+  event.preventDefault();
   const form = document.getElementById("formulario");
 
   const $importe = form.importe.value;
@@ -80,6 +81,7 @@ function validarFormulario(event) {
     "divisa-a-convertir": errorDivisaAConvertir,
   };
 
+  eliminarErrores();
   const esExito = manejarErrores(errores) === 0;
 
   if (esExito) {
@@ -102,27 +104,39 @@ function validarFormulario(event) {
       console.log("algo salio mal", error);
     }
   }
-
-  event.preventDefault();
 }
 
 function manejarErrores(errores) {
   const llaves = Object.keys(errores);
+  const $errores = document.querySelectorAll(".errores");
 
   let contadorErrores = 0;
 
-  llaves.forEach((llave) => {
+  llaves.forEach((llave, index) => {
     const error = errores[llave];
 
     if (error) {
       contadorErrores++;
       document.formulario[llave].classList.add("error");
+
+      const $error = document.createElement("li");
+      $error.classList.add("error-texto");
+      $error.textContent = error;
+
+      $errores[index].appendChild($error);
     } else {
       document.formulario[llave].classList.remove("error");
     }
   });
 
   return contadorErrores;
+}
+
+function eliminarErrores() {
+  const $errores = document.querySelectorAll("li");
+  for (let $error of $errores) {
+    $error.remove();
+  }
 }
 
 document.querySelector("#btn-cotizacion").onclick = validarFormulario;
